@@ -1,80 +1,139 @@
-import React from 'react'
-//import { AiOutlineCheck } from "react-icons/ai";
-
-function Pricecard(props){
-return(
-<p>{props.name} {props.acc} </p>
-
-
-
-)
+import Card from './Card';
+import './App.css';
+function App() {
+let myPrices = [
+  {
+    plan: "FREE",
+    price: "$0/month",
+    features: [
+      {
+        name: "Single User",
+        isEnabled: true
+      },
+      {
+        name: "50GB Storage",
+        isEnabled: true
+      },
+      {
+        name: "Unlimited Public Projects",
+        isEnabled: true
+      },
+      {
+        name: "Community Access",
+        isEnabled: true
+      },
+      {
+        name: "Unlimited Private Projects",
+        isEnabled: false
+      },
+      {
+        name: "Dedicated Phone Support",
+        isEnabled: false
+      },
+      {
+        name: "Free Subdomain",
+        isEnabled: false
+      },
+      {
+        name: "Monthly Status Reports",
+        isEnabled: false
+      }
+    ]
+  },
+  {
+    plan: "PLUS",
+    price: "$9/month",
+    features: [
+      {
+        name: "5 Users",
+        isEnabled: true
+      },
+      {
+        name: "50GB Storage",
+        isEnabled: true
+      },
+      {
+        name: "Unlimited Public Projects",
+        isEnabled: true
+      },
+      {
+        name: "Community Access",
+        isEnabled: true
+      },
+      {
+        name: "Unlimited Private Projects",
+        isEnabled: true
+      },
+      {
+        name: "Dedicated Phone Support",
+        isEnabled:true        },
+      {
+        name: "Free Subdomain",
+        isEnabled:true        },
+      {
+        name: "Monthly Status Reports",
+        isEnabled: false        }
+    ]
+  },
+  {
+    plan: "PRO",
+    price: "$49/month",
+    features: [
+      {
+        name: "Unlimited Users",
+        isEnabled: true
+      },
+      {
+        name: "50GB Storage",
+        isEnabled: true
+      },
+      {
+        name: "Unlimited Public Projects",
+        isEnabled: true
+      },
+      {
+        name: "Community Access",
+        isEnabled: true
+      },
+      {
+        name: "Unlimited Private Projects",
+        isEnabled: true
+      },
+      {
+        name: "Dedicated Phone Support",
+        isEnabled: true
+      },
+      {
+        name: "Free Subdomain",
+        isEnabled: true
+      },
+      {
+        name: "Monthly Status Reports",
+        isEnabled: true
+      }
+    ]
+  }
+]
+ return (
+    <>
+        <section className="pricing py-5">
+          <div className="container">
+            <div className="row">
+              {
+                myPrices.map( (obj) =>{return<Card data={obj}></Card>})   // store data in myPrices map to card 
+              }
+            </div>
+          </div>
+        </section>
+    </>
+  );
 }
 
-function App () {
-  
-
-  const domain='Free Subdomain'
-  const report='Monthly Status Reports'
-  const support='Dedicated Phone Support'
-  const project='Unlimited Private Projects'
-  const access='Community Access'
-  
-  
-  return (
-    <div className='container' >
-      <div className='card1' >
-      <p>FREE</p>
-      <h2>$0 /month</h2>
-      <Pricecard name='Single Users' />
-      <Pricecard name='5GB Storage' />
-      <Pricecard name= 'Unlimited Public Projects'/>
-      <Pricecard acc={access} />
-      <Pricecard name={project} />
-      <Pricecard name={support} />
-      <Pricecard name={domain} />
-      <Pricecard name= {report} />
-      
-      
-      <button type="button">BUTTON</button>
-      
-      </div>
-
-      <div className='card2 '> 
-      <p>PLUS</p>
-      <h2>$9 /month</h2>
-       <Pricecard name='5 Users' />
-      <Pricecard name='50GB Storage' />
-      <Pricecard name= 'Unlimited Public Projects'/>
-      <Pricecard acc={access} />
-      <Pricecard name={project} />
-      <Pricecard name={support} />
-      <Pricecard name={domain} />
-      <Pricecard name={report}  />
-      
-      <button type="button">BUTTON</button>
-      
-      </div>
-      
-
-
-      <div className='card3' > 
-      <p>PRO</p>
-      <h2>$49 /month</h2>
-      <Pricecard name= 'Unlimited Users'/>
-      <Pricecard name= '150GB Storage'/>
-      <Pricecard name= 'Unlimited Public Projects'/>
-      <Pricecard acc={access} />
-      <Pricecard name={project} />
-      <Pricecard name={support} />
-      <Pricecard name={domain} />
-      <Pricecard name={report} />
-      
-      <button type='button'>BUTTON</button>
-      </div>
-    </div>
-  )
-}
-export default App
+export default App;
+            
+            
+            
+            
 
 
 
@@ -83,7 +142,3 @@ export default App
 
 
 
-
-
-
- 
